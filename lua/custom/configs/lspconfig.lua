@@ -3,8 +3,14 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
+vim.diagnostic.config({
+  virtual_text = {
+    severity = vim.diagnostic.severity.ERROR,
+  }
+})
+
 -- if you just want default config for the servers then put them in a table
-local servers = { "pylsp", "clangd" }
+local servers = { "pylsp", "clangd", "erlangls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -12,6 +18,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
--- 
--- lspconfig.pyright.setup { blabla}

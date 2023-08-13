@@ -1,22 +1,24 @@
 -- local autocmd = vim.api.nvim_create_autocmd
-
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
+--
+-- autocmd({ "BufRead", "BufNewFile" },  {
+-- 	pattern = "*.launch",
+-- 	command = "set filetype=xml"
 -- })
 
+vim.o.guifont = "Hack Nerd Font Mono:h12"
+
 if vim.g.neovide then
-	-- vim.g.neovide_padding_top = 10
-	-- vim.g.neovide_padding_bottom = 10
+	vim.g.neovide_padding_top = 10
+	vim.g.neovide_padding_bottom = 10
 	-- vim.g.neovide_padding_right = 10
 	-- vim.g.neovide_padding_left = 10
 
 	vim.g.neovide_remember_window_size = true
 
 	vim.g.neovide_transparency = 0.95
+
 	vim.g.neovide_cursor_animation_length = 0.13
-	vim.g.neovide_cursor_trail_size = 0.05
+	vim.g.neovide_cursor_trail_size = 0.1
  	-- available values: railgun torpedo pixiedust sonicboom ripple wireframe
 	vim.g.neovide_cursor_vfx_mode="ripple"
 	vim.g.neovide_cursor_vfx_opacity = 200.0
